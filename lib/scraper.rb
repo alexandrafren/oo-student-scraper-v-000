@@ -13,6 +13,7 @@ class Scraper
       hash[:name] = student.css(".student-name").text
       hash[:location] = student.css(".student-location").text
       hash[:profile_url] = student.css("a").attribute("href").value
+      hash[:profile_url] = doc.css("div.student-card a")
       scraped_students << hash
     end
     scraped_students
@@ -34,6 +35,7 @@ class Scraper
       scraped_student << hash
     end
     scraped_student
+
   end
 
 end
